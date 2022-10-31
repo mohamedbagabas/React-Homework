@@ -2,20 +2,23 @@ import React, { Component } from "react";
 import './App.css';
 import Nav from './Components/Nav';
 import Footer from './Components/Footer';
-import SocialProfileWithImage from './Components/Course';
+// import SocialProfileWithImage from './Components/Course';
 import { CalendarIcon } from "@chakra-ui/icons";
+import Login from "./Components/Login_page";
 
 function App () {
   return (
     <div className="App">
       <Nav/>
+      <Login/>
       <div className ="course">
-      <SocialProfileWithImage name = "Campain JS " Course="JS" startdate="12/12/2022" enddate="10/10/2023" date ="1"/>
-      <SocialProfileWithImage name = "Campain Python " Course="Python" startdate="5/6/2020" enddate="10/10/2020" date="13" />
-      <SocialProfileWithImage name = "Campain C# " Course="C#" startdate="6/7/2023" enddate="19/5/2023" date="9" />
-      <SocialProfileWithImage name = "Campain C " Course="C" startdate="25/9/2024" enddate="24/10/2024"  date="5"/>
-      <SocialProfileWithImage name = "Campain Java " Course="Java" startdate="22/7/2023" enddate="10/10/2024"  date="5"/>
-      <SocialProfileWithImage name = "Campain C++ " Course="C++" startdate="12/12/2020" enddate="10/10/2021" date="20" />
+      {/* <SocialProfileWithImage name = "Campain JS " Course="JS" startdate={("2023-10-12")} enddate={("2024-5-10")} />
+      <SocialProfileWithImage name = "Campain Python " Course="Python" startdate={"2020,6,12"} enddate={'2021,10,9'}/>
+      <SocialProfileWithImage name = "Campain C# " Course="C#" startdate={"2023"} enddate={"2024"}  />
+      <SocialProfileWithImage name = "Campain C " Course="C" sta  startdate={2023} enddate={2024}  />
+      <SocialProfileWithImage name = "Campain Java " Course="Java" startdate={2023} enddate={2024}/>
+      <SocialProfileWithImage name = "Campain C++ " Course="C++" startdate={("2020")} enddate={(2021)}/> */
+      }
       </div>
       <footer>
         <Footer/>

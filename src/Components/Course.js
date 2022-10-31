@@ -19,9 +19,11 @@ import {
     
     let Stats ;
     let color ;
-    let today = new Date();
-    let todaydate = today.getDate(Date.now);
-    if(props.date < 10 ) {
+    var today = new Date(props.startdate);
+    var today2 = new Date(props.enddate);
+ 
+    if (today.getTime() < today2.getTime()) {
+        
         Stats = "Course is open";
         color = "blue";
     }
