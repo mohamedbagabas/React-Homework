@@ -1,24 +1,40 @@
 import React from "react";
 import debounce from "lodash.debounce";
 
-
-
-const AgentInput = ({ inputValue, handleInput }) => (
+const AddressInput = ({ inputValue, handleInput }) => (
   <input
-    className="common filter-search"
+    className="Course"
     type="text"
-    placeholder="searchbox"
+    placeholder="Searchbox"
     value={inputValue}
     onChange={handleInput}
   />
 );
 
+const AgentInput = ({ inputValue, handleInput }) => (
+  <input
+    className="Course"
+    type="text"
+    placeholder="Searchbox"
+    value={inputValue}
+    onChange={handleInput}
+  />
+);
 
+const Suggestions = ({ list, handleSuggestionClick }) => (
+  <ul className="agents-list search-suggestions">
+    {list.map(({ id, name }) => (
+      <li key={id} id={id} onClick={handleSuggestionClick}>
+        {name}
+      </li>
+    ))}
+  </ul>
+);
 
 class FilterSearch extends React.Component {
   state = {
     inputValue: "",
-    currentSearch: "",
+    currentSearch: "Address",
     suggestions: [],
     currentSuggestions: [],
     showSuggestions: false
@@ -45,13 +61,19 @@ class FilterSearch extends React.Component {
   getSuggestions = value => {
     let suggestions;
 
-    
-
-    if (value === "Course") {
+    if (value === "Agent") {
       suggestions = [
-        { id: 1, name: "JS" },
-        { id: 2, name: "Python" },
-        { id: 3, name: "Java" }
+        { id: 1, name: "Thulio Philipe" },
+        { id: 2, name: "José Carlos" },
+        { id: 3, name: "Nicolle Cysneiros" }
+      ];
+    }
+
+    if (value === "Address") {
+      suggestions = [
+        { id: 1, name: "Indianapolis" },
+        { id: 2, name: "Haddonfield Avenue" },
+        { id: 3, name: "Indian Hill" }
       ];
     }
 
@@ -93,16 +115,16 @@ class FilterSearch extends React.Component {
   };
 
   componentDidMount() {
-    
-    const suggestions = this.getSuggestions("Course");
+    // set address suggestions as default
+    const suggestions = this.getSuggestions("Address");
     this.setState({ suggestions });
   }
 
   renderInput = () => {
     const { currentSearch, inputValue } = this.state;
 
-    return currentSearch === "Course" ? (
-      <AgentInput
+    return currentSearch === "Address" ? (
+      <AddressInput
         inputValue={inputValue}
         handleInput={this.handleInputChange}
       />
@@ -119,14 +141,18 @@ class FilterSearch extends React.Component {
 
     return (
       <React.Fragment>
-        <p className="common p" onChange={this.handleSelectChange}>
-          <p value="Courses">Courses</p>
-          
+        <p className="Course" onChange={this.handleSelectChange}>
+          Course
         </p>
 
         {this.renderInput()}
 
-        
+        {showSuggestions && (
+          <Suggestions
+            list={currentSuggestions}
+            handleSuggestionClick={this.handleSuggestionClick}
+          />
+        )}
       </React.Fragment>
     );
   }
