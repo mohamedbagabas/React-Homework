@@ -31,7 +31,9 @@ import {
      Stats = "Course is close";
      color = "black";
     }
+    
     return (
+      
       <Center py={6}>
         <Box
           maxW={'270px'}
@@ -44,7 +46,6 @@ import {
             h={'120px'}
             w={'full'}
             src={img1}
-            
             objectFit={'cover'}
           />
           <Flex justify={'center'} mt={-12}>
@@ -81,7 +82,6 @@ import {
                 </Text>
               </Stack>
             </Stack>
-  
             <Button
               w={'full'}
               mt={8}
@@ -96,6 +96,12 @@ import {
             </Button>
           </Box>
         </Box>
+       
+     
       </Center>
+      
+      
     );
+    
   }
+  

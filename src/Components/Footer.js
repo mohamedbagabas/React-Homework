@@ -8,11 +8,15 @@ import {
   } from '@chakra-ui/react';
   
   export default function SmallWithNavigation() {
+    
     return (
+      
       <Box
+      
         bg={useColorModeValue('blue.500')}
         color={useColorModeValue('gray.700', 'gray.200')}>
         <Container
+        
           as={Stack}
           maxW={'6xl'}
           py={4}
@@ -25,9 +29,14 @@ import {
             <Link href={'#'}>About</Link>
             <Link href={'#'}>Blog</Link>
             <Link href={'#'}>Contact</Link>
+           
           </Stack>
           <Text>© Tuwaiq All rights reserved</Text>
+          
         </Container>
+        
       </Box>
+      
     );
+    
   }
