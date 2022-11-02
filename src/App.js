@@ -1,4 +1,4 @@
-import React, { Component , useState } from "react";
+import React, { Component , useState , useEffect } from "react";
 import './App.css';
 import Nav from './Components/Nav';
 import Footer from './Components/Footer';
@@ -8,8 +8,29 @@ import FilterSearch from "./Components/Searchbar";
 import LoginForm from "./Components/Login_page";
 import { Routes, Route } from 'react-router-dom';
 import Routers from "./Components/Router";
+import axios from "axios";
+import Postata from './Components/Postata'
+
 
 function App () {
+  const [state, setstate] = useState([])
+    useEffect(() =>{
+      axios.get("https://636242477521369cd068dfa6.mockapi.io/ToDo").then((res) =>{
+        console.log((res));
+        setstate(res.data)
+      })
+    })
+    console.log(state);
+  // const [state, setstate] =useState([])
+
+  // useEffect (() => {
+  //   axios.get("https://rickandmortyapi.com/api/character").then((res)=>{
+  //     console.log(res.data.results);
+  //     setstate(res.data.results)
+      
+  //   })
+        
+  // })
   // const adminUser = {
   //   name: "Abdulkarim",
   //   password: "123",
@@ -50,9 +71,27 @@ function App () {
     
       <div className="App">
         
-        
-       
-       <Routers />
+        {/* {state.map(items => {
+          return(
+            
+           <div className="imgdiv">
+           <img src={items.image}/>
+            <p>Name:{items.name}</p>
+           </div>
+            
+          )
+        })} */}
+        <Postata/>
+        {state.map((e)=>(
+          <div>
+               <h1 >First Name:{e.fName} </h1>
+               <h1>Last Name:{e.lName}</h1>
+               <h1 >email:{e.email} </h1>
+               <h1 >password:{e.pass} </h1>
+  </div>
+        ))}
+      
+       {/* <Routers /> */}
         {/* <div className ="course">
        
        <SocialProfileWithImage name = "Campain JS " Course="JS" startdate={("2023-10-12")} enddate={("2024-5-10")} />
