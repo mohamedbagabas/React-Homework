@@ -13,14 +13,14 @@ import Postata from './Components/Postata'
 
 
 function App () {
-  const [state, setstate] = useState([])
-    useEffect(() =>{
-      axios.get("https://636242477521369cd068dfa6.mockapi.io/ToDo").then((res) =>{
-        console.log((res));
-        setstate(res.data)
-      })
-    })
-    console.log(state);
+  // const [state, setstate] = useState([])
+  //   useEffect(() =>{
+  //     axios.get("https://636242477521369cd068dfa6.mockapi.io/ToDo").then((res) =>{
+  //       console.log((res));
+  //       setstate(res.data)
+  //     })
+  //   })
+  //   console.log(state);
   // const [state, setstate] =useState([])
 
   // useEffect (() => {
@@ -70,9 +70,10 @@ function App () {
     
     
       <div className="App">
-        
+      
+        <Routers />
         {/* {state.map(items => {
-          return(
+          return(`
             
            <div className="imgdiv">
            <img src={items.image}/>
@@ -81,17 +82,17 @@ function App () {
             
           )
         })} */}
-        <Postata/>
-        {state.map((e)=>(
-          <div>
-               <h1 >First Name:{e.fName} </h1>
-               <h1>Last Name:{e.lName}</h1>
-               <h1 >email:{e.email} </h1>
-               <h1 >password:{e.pass} </h1>
-  </div>
-        ))}
+        {/* <Postata/> */}
+        {/* {state.map((e)=>(
+          <div className="getdisplay">
+               <h3>First Name:{e.fName} </h3>
+               <h3>Last Name:{e.lName}</h3>
+               <h3 >email:{e.email} </h3>
+               <h3 >password:{e.pass} </h3>
+          </div>
+        ))} */}
       
-       {/* <Routers /> */}
+       
         {/* <div className ="course">
        
        <SocialProfileWithImage name = "Campain JS " Course="JS" startdate={("2023-10-12")} enddate={("2024-5-10")} />
@@ -120,7 +121,7 @@ function App () {
           <LoginForm login={login} error={error} />
         )} */}
       <footer>
-        <Footer/>
+        
       </footer>
     </div>
   );
