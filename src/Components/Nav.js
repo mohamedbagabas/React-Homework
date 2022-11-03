@@ -104,7 +104,7 @@ function Nav() {
     const Navigate = useNavigate()
     return (
         <div className='nav'>
-            <Link className='Link' to={"/Course"}>Course</Link>
+            <Link className='Link' to={"/Course"}></Link>
             <br />
             <button onClick={() => Navigate("/Login_page")}>login</button>
         </div>

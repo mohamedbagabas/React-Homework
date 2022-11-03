@@ -1,15 +1,17 @@
-import React, { Component , useState , useEffect } from "react";
+// import React, { Component , useState , useEffect } from "react";
 import './App.css';
-import Nav from './Components/Nav';
-import Footer from './Components/Footer';
-import SocialProfileWithImage from './Components/Course';
-import { CalendarIcon } from "@chakra-ui/icons";
-import FilterSearch from "./Components/Searchbar";
-import LoginForm from "./Components/Login_page";
-import { Routes, Route } from 'react-router-dom';
-import Routers from "./Components/Router";
-import axios from "axios";
-import Postata from './Components/Postata'
+// import Nav from './Components/Nav';
+// import Footer from './Components/Footer';
+// import SocialProfileWithImage from './Components/Course';
+// import { CalendarIcon } from "@chakra-ui/icons";
+// import FilterSearch from "./Components/Searchbar";
+// import LoginForm from "./Components/Login_page";
+
+
+import Routers from './Components/Router'
+
+// import axios from "axios";
+// import Postata from './Components/Postata'
 
 
 function App () {
@@ -70,60 +72,9 @@ function App () {
     
     
       <div className="App">
-      
-        <Routers />
-        {/* {state.map(items => {
-          return(`
-            
-           <div className="imgdiv">
-           <img src={items.image}/>
-            <p>Name:{items.name}</p>
-           </div>
-            
-          )
-        })} */}
-        {/* <Postata/> */}
-        {/* {state.map((e)=>(
-          <div className="getdisplay">
-               <h3>First Name:{e.fName} </h3>
-               <h3>Last Name:{e.lName}</h3>
-               <h3 >email:{e.email} </h3>
-               <h3 >password:{e.pass} </h3>
-          </div>
-        ))} */}
-      
+      <Routers/>
+        </div>
        
-        {/* <div className ="course">
-       
-       <SocialProfileWithImage name = "Campain JS " Course="JS" startdate={("2023-10-12")} enddate={("2024-5-10")} />
-       <SocialProfileWithImage name = "Campain Python " Course="Python" startdate={"2022,6,12"} enddate={'2023,10,9'}/>
-       <SocialProfileWithImage name = "Campain C# " Course="C#" startdate={"2023"} enddate={"2024"}  />
-       <SocialProfileWithImage name = "Campain C " Course="C" sta  startdate={2023} enddate={2024}  />
-       <SocialProfileWithImage name = "Campain Java " Course="Java" startdate={2023} enddate={2024}/>
-       <SocialProfileWithImage name = "Campain C++ " Course="C++" startdate={("2020")} enddate={(2021)}/> 
-       </div> */}
-        
-        
-        {/* <Nav/>
-        
-        {user.name !== "" ? (
-          <div className="login-form">
-            <h2>
-              Welcome
-              <span>
-                {user.name} <br />{" "}
-                <span className="success"> You are logged in Successfully! </span>
-              </span>
-            </h2>
-            <button onClick={Logout}> Logout </button>
-          </div>
-        ) : (
-          <LoginForm login={login} error={error} />
-        )} */}
-      <footer>
-        
-      </footer>
-    </div>
   );
 }
 
