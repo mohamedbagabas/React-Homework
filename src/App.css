@@ -62,3 +62,23 @@ ul{
   grid-template-columns: repeat(3, 2fr);
   
 }
+.top-navbar {
+  position: relative;
+  z-index: 10;
+}
+
+
+
+.top-navbar .navbar-light .navbar-nav .nav-link {
+  color: #e51313;
+  font-size: 18px;
+  padding: 0px 20px;
+  border-radius: 4px;
+}
+
+
+.navbar-expand-lg .navbar-nav .dropdown-menu {
+  border: none;
+  box-shadow: 2px 5px 6px rgba(230, 223, 223, 0.5);
+}
+

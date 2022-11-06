@@ -1,6 +1,6 @@
 
-import { Link , useNavigate } from 'react-router-dom';
-import React from 'react';
+// import { Link , useNavigate } from 'react-router-dom';
+// import React from 'react';
 
 // import {
 //   Box,
@@ -100,15 +100,67 @@ import React from 'react';
   
 
 
+// function Nav() {
+//     const Navigate = useNavigate()
+//     return (
+//         <div className='nav'>
+//             <Link className='' to={""}></Link>
+//             <br />
+//             <button onClick={() => Navigate("/Login_page")}>login</button>
+//         </div>
+//     )
+// }
+
+// export default Nav
+import React from "react";
+import { Link } from "react-router-dom";
+
 function Nav() {
-    const Navigate = useNavigate()
-    return (
-        <div className='nav'>
-            <Link className='Link' to={"/Course"}></Link>
-            <br />
-            <button onClick={() => Navigate("/Login_page")}>login</button>
+  return (
+    <header className="top-navbar">
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <div className="container">
+          <a className="navbar-brand" href="index.html">
+            <img
+              src={process.env.PUBLIC_URL + "/logo.png"}
+              width="200px"
+              alt=""
+            />
+          </a>
+          <button
+            className="navbar-toggler"
+            type="button"
+            data-toggle="collapse"
+            data-target="#navbars-rs-food"
+            aria-controls="navbars-rs-food"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span className="navbar-toggler-icon"></span>
+          </button>
+          <div className="collapse navbar-collapse" id="navbars-rs-food">
+            <ul className="navbar-nav ml-auto">
+              <li className="nav-item active">
+                <Link className="nav-link" to="/">
+                  Home
+                </Link>
+              </li>
+              
+              
+              
+              
+              
+              <li className="nav-item">
+                <Link className="nav-link" to="/data">
+                  Api Data
+                </Link>
+              </li>
+            </ul>
+          </div>
         </div>
-    )
+      </nav>
+    </header>
+  );
 }
 
-export default Nav
+export default Nav;

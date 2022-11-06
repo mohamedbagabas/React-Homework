@@ -1,4 +1,4 @@
-// import React, { Component , useState , useEffect } from "react";
+import React, { Component , useState , useEffect } from "react";
 import './App.css';
 // import Nav from './Components/Nav';
 // import Footer from './Components/Footer';
@@ -9,19 +9,19 @@ import './App.css';
 
 
 import Routers from './Components/Router'
-
-// import axios from "axios";
+import { BrowserRouter , Router , Route } from 'react-router-dom';
+import axios from "axios";
 // import Postata from './Components/Postata'
 
 
 function App () {
-  // const [state, setstate] = useState([])
-  //   useEffect(() =>{
-  //     axios.get("https://636242477521369cd068dfa6.mockapi.io/ToDo").then((res) =>{
-  //       console.log((res));
-  //       setstate(res.data)
-  //     })
-  //   })
+  const [state, setstate] = useState([])
+    useEffect(() =>{
+      axios.get("https://api.instantwebtools.net/v1/airlines").then((res) =>{
+        console.log((res));
+        setstate(res)
+      })
+    })
   //   console.log(state);
   // const [state, setstate] =useState([])
 
@@ -34,8 +34,8 @@ function App () {
         
   // })
   // const adminUser = {
-  //   name: "Abdulkarim",
-  //   password: "123",
+  //   name: "mohamed",
+  //   password: "123456789",
   // };
   // const [user, setUser] = useState({
   //   name: "",
@@ -72,6 +72,7 @@ function App () {
     
     
       <div className="App">
+        
       <Routers/>
         </div>
        
