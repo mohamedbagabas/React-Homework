@@ -17,7 +17,7 @@ import axios from "axios";
 function App () {
   const [state, setstate] = useState([])
     useEffect(() =>{
-      axios.get("https://api.instantwebtools.net/v1/airlines").then((res) =>{
+      axios.get("https://api.jikan.moe/v4/anime?q=bleach&sfw").then((res) =>{
         console.log((res));
         setstate(res)
       })
